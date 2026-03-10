@@ -1,33 +1,15 @@
-# Documentación funcional
+# Documentación del sistema
 
-Este directorio concentra la especificación de la app para talleres de joyería.
+Este directorio contiene la versión consolidada del sistema **Atelier de Lujo Pro** con flujo cliente→taller, catálogo completo y filtrado inteligente de servicios.
 
-## Índice
+## Índice recomendado de lectura
+1. [`00-system-prompt-completo.md`](00-system-prompt-completo.md)
+2. [`01-resumen-ejecutivo.md`](01-resumen-ejecutivo.md)
+3. [`02-catalogo-servicios-precios.md`](02-catalogo-servicios-precios.md)
+4. [`03-filtrado-inteligente-y-precios.md`](03-filtrado-inteligente-y-precios.md)
+5. [`04-flujos-pantallas.md`](04-flujos-pantallas.md)
+6. [`05-arquitectura-tecnica.md`](05-arquitectura-tecnica.md)
+7. [`06-checklist-implementacion.md`](06-checklist-implementacion.md)
 
-1. [`01-contexto-producto.md`](01-contexto-producto.md)
-   - Contexto del negocio.
-   - Tipo de usuario.
-   - Reglas clave (pago a la entrega, flujo inicia con pieza física).
-   - Dashboard inicial y menú principal.
-
-2. [`02-flujo-ui-reparacion.md`](02-flujo-ui-reparacion.md)
-   - Flujo obligatorio de reparación paso a paso.
-   - Mockups ASCII de pantallas.
-   - Reglas de servicios por pieza y resumen de pedido.
-
-3. [`03-recibos-operacion.md`](03-recibos-operacion.md)
-   - Sistema dual de recibos.
-   - Reglas de visibilidad de precios/totales.
-   - Operativa interna para técnicos.
-
-4. [`04-datos-tecnico.md`](04-datos-tecnico.md)
-   - Estructura de base de datos.
-   - Configuración de taller.
-   - Consideraciones técnicas críticas.
-
-5. [`05-checklist-implementacion.md`](05-checklist-implementacion.md)
-   - Checklist por módulos para ejecución del proyecto.
-   - Flujo completo del usuario final.
-
-6. [`spec-completa-original.md`](spec-completa-original.md)
-   - Fuente original completa (sin dividir), mantenida como referencia.
+## Nota
+El archivo `spec-completa-original.md` se conserva únicamente como referencia histórica.
