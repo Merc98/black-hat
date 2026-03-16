@@ -189,13 +189,13 @@ const updateScrollIndicator = () => {
     scrollIndicator.classList.remove("visible");
     return;
   }
-  if (iconScroll.scrollTop > 0) {
-    scrollIndicator.style.top = "10px";
-    scrollIndicator.style.transform = "rotate(0deg)";
-    scrollIndicator.classList.add("visible");
-  } else if (iconScroll.scrollTop < maxScroll) {
+  if (iconScroll.scrollTop < maxScroll) {
     scrollIndicator.style.top = "calc(100% - 14px)";
     scrollIndicator.style.transform = "rotate(180deg)";
+    scrollIndicator.classList.add("visible");
+  } else if (iconScroll.scrollTop > 0) {
+    scrollIndicator.style.top = "10px";
+    scrollIndicator.style.transform = "rotate(0deg)";
     scrollIndicator.classList.add("visible");
   } else {
     scrollIndicator.classList.remove("visible");
