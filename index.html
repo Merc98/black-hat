@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brad Levi Jewelry Repair</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="device">
+    <div class="safe-area">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="icon-scroll" id="iconScroll">
+          <button class="icon-button active" data-category="restoration" data-tooltip="Restoration">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5c2.8 0 5 2.2 5 5 0 3.7-5 10-5 10s-5-6.3-5-10c0-2.8 2.2-5 5-5z"/></svg>
+          </button>
+          <button class="icon-button" data-category="stones" data-tooltip="Stone Care">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l6 6-6 11-6-11 6-6z"/></svg>
+          </button>
+          <button class="icon-button" data-category="metal" data-tooltip="Metalwork">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-2 10H8L6 7zm2-3h8v2H8V4z"/></svg>
+          </button>
+          <button class="icon-button" data-category="watches" data-tooltip="Watch Atelier">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6l1 3h3v14h-3l-1 3H9l-1-3H5V5h3l1-3zm3 6a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          </button>
+          <button class="icon-button" data-category="engraving" data-tooltip="Engraving">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18l7-7 4 4-7 7H5v-4zm9-9l2-2 3 3-2 2-3-3z"/></svg>
+          </button>
+          <button class="icon-button" data-category="cleaning" data-tooltip="Cleaning">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14l8-8 8 8-8 8-8-8zm8-4l4 4-4 4-4-4 4-4z"/></svg>
+          </button>
+          <button class="icon-button" data-category="resize" data-tooltip="Resizing">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h6V4H2v8h2V6zm16 0v6h2V4h-8v2h6zm0 12h-6v2h8v-8h-2v6zm-16-6H2v8h8v-2H4v-6z"/></svg>
+          </button>
+          <button class="icon-button" data-category="heritage" data-tooltip="Heritage">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v10l-8 4-8-4V7l8-4zm0 4.2L7 9v6l5 2.8 5-2.8V9l-5-1.8z"/></svg>
+          </button>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator" aria-hidden="true"></div>
+        <div class="tooltip" id="tooltip"></div>
+        <button class="admin-button" id="adminButton" aria-label="Admin">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a4 4 0 014 4c0 2.2-1.8 4-4 4s-4-1.8-4-4a4 4 0 014-4zm0 10c4.2 0 7 2 7 4.5V21H5v-2.5C5 16 7.8 14 12 14z"/></svg>
+        </button>
+      </aside>
+
+      <main class="content">
+        <button class="search-button" id="searchButton" aria-label="Search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4a6.5 6.5 0 014.9 10.8l3.1 3.1-1.4 1.4-3.1-3.1A6.5 6.5 0 1110.5 4zm0 2a4.5 4.5 0 100 9 4.5 4.5 0 000-9z"/></svg>
+        </button>
+
+        <section class="window" id="categoryWindow">
+          <header class="window-header">
+            <div class="header-left">
+              <span class="header-icon" id="categoryIcon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"></svg>
+              </span>
+              <h2 id="categoryTitle">Restoration</h2>
+            </div>
+            <button class="close-button" id="closeCategory" aria-label="Close">×</button>
+          </header>
+          <div class="service-list" id="serviceList"></div>
+          <button class="print-button" id="printButton">Print</button>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="overlay" id="searchOverlay" aria-hidden="true">
+    <div class="search-panel">
+      <input type="text" id="searchInput" placeholder="Search services…" />
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="overlay" id="adminOverlay" aria-hidden="true">
+    <div class="modal">
+      <h3>Admin Access</h3>
+      <input type="text" id="adminUser" placeholder="Username" />
+      <input type="password" id="adminPass" placeholder="Password" />
+      <p class="error" id="adminError">Invalid credentials.</p>
+      <button class="modal-action" id="adminLogin">Continue</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="multiplierOverlay" aria-hidden="true">
+    <div class="modal">
+      <h3>Price Multiplier</h3>
+      <input type="number" id="multiplierInput" min="0.01" max="99.99" step="0.01" placeholder="1.00" />
+      <button class="modal-action" id="saveMultiplier">Save</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="preInvoiceOverlay" aria-hidden="true">
+    <div class="modal receipt">
+      <h3>Confirm Invoice</h3>
+      <div class="receipt-body" id="preInvoiceBody"></div>
+      <div class="receipt-line">
+        <span>FedEx Shipping</span>
+        <label class="toggle">
+          <input type="checkbox" id="shippingToggle" />
+          <span></span>
+        </label>
+      </div>
+      <div class="receipt-line">
+        <span>Shipping</span>
+        <span id="shippingCost">$0</span>
+      </div>
+      <div class="receipt-line total">
+        <span>Total</span>
+        <span id="totalAmount">$0</span>
+      </div>
+      <button class="modal-action" id="generateInvoice">Generate Invoice</button>
+    </div>
+  </div>
+
+  <div class="invoice-stage" id="invoiceStage" aria-hidden="true">
+    <div class="invoice-paper" id="invoicePaper">
+      <div class="logo">BRAD®LEVI</div>
+      <h1>Jewelry Repair Invoice</h1>
+      <div class="meta" id="invoiceMeta"></div>
+      <div class="invoice-services" id="invoiceServices"></div>
+      <div class="invoice-summary" id="invoiceSummary"></div>
+      <div class="thanks">Thank you for your trust.</div>
+    </div>
+    <button class="save-pdf" id="savePdf">Save as PDF</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
