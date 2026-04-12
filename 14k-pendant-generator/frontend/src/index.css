@@ -1,0 +1,157 @@
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1f1f1f;
+  background-color: #f2f3f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  margin-bottom: 8px;
+}
+
+.panel {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.panel input {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #d7d7d7;
+}
+
+.panel button,
+.metrics button {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  background: #1f1f1f;
+  color: #fff;
+  cursor: pointer;
+}
+
+.panel button:disabled,
+.metrics button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #b42318;
+  font-size: 14px;
+}
+
+.viewer {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 2fr 1fr;
+}
+
+.viewer-frame {
+  height: 420px;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder {
+  color: #9aa1ad;
+}
+
+.metrics {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ar-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 15, 15, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 20;
+}
+
+.ar-modal__content {
+  width: min(900px, 100%);
+  height: min(640px, 90vh);
+  background: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 16px;
+  gap: 12px;
+}
+
+.ar-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ar-modal__close {
+  border: none;
+  background: #1f1f1f;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ar-modal__hint {
+  margin: 0;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+@media (max-width: 900px) {
+  .viewer {
+    grid-template-columns: 1fr;
+  }
+
+  .viewer-frame {
+    height: 320px;
+  }
+}
